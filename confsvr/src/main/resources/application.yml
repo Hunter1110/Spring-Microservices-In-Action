@@ -5,5 +5,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/carnellj/config-repo/
+          uri: https://github.com/Hunter1110/config-repo/
           searchPaths: '{application}'
