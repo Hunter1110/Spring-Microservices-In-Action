@@ -11,6 +11,7 @@
     <modules>
         <module>licensing-service</module>
         <module>confsvr</module>
+        <module>eurekasvr</module>
     </modules>
 
     <parent>
