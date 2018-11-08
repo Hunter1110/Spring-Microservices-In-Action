@@ -9,63 +9,30 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>licensing-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>eureka-server</artifactId>
 
-    <name>EagleEye Licensing Service</name>
-    <description>Licensing Service</description>
+    <name>Eureka Server</name>
+    <description>Eureka Server demo project</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
             <version>1.4.6.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
     </dependencies>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>com.thoughtmechanix.eurekasvr.EurekaServerApplication</start-class>
         <java.version>1.8</java.version>
-        <start-class>com.thoughtmechanix.licenses.Application</start-class>
-        <docker.image.name>spmia-licensing-service</docker.image.name>
+        <docker.image.name>spmia-eurekasvr</docker.image.name>
         <docker.image.tag>chapter4</docker.image.tag>
     </properties>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -108,7 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 </project>

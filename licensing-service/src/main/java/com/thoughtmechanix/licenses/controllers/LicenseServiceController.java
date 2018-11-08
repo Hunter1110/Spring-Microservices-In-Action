@@ -12,9 +12,10 @@ public class LicenseServiceController {
     @Autowired
     LicenseService licenseService;
 
-    @GetMapping(value = "/{licenseId}")
+    @GetMapping(value = "/{licenseId}/{clientType}")
     public License getLicenses(@PathVariable("organizationId") String organizationId,
-                               @PathVariable("licenseId") String licenseId) {
-       return licenseService.getLicense(organizationId, licenseId);
+                               @PathVariable("licenseId") String licenseId,
+                               @PathVariable("clientType") String clientType) {
+       return licenseService.getLicense(organizationId, licenseId, clientType);
     }
 }
