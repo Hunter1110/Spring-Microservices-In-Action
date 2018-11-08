@@ -22,9 +22,9 @@ while ! `nc -z configserver $CONFIGSERVER_PORT`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
 echo "********************************************************"
-echo "Starting Licensing Service with Eureka Endpoint:  $EUREKASERVER_URI";
+echo "Starting Organization Service with Eureka Endpoint:  $EUREKASERVER_URI";
 echo "********************************************************"
 java -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI             \
      -Dspring.cloud.config.uri=$CONFIGSERVER_URI                          \
      -Dspring.profiles.active=$PROFILE                                   \
-     -jar /usr/local/licensing-service/@project.build.finalName@.jar
+     -jar /usr/local/organization-service/@project.build.finalName@.jar
