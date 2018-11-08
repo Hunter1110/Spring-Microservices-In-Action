@@ -17,6 +17,7 @@ public class OrganizationDiscoveryClient {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+
     public Organization getOrganization(String organizationId) {
         RestTemplate restTemplate = new RestTemplate();
         List<ServiceInstance> instances = discoveryClient.getInstances("organization-service");

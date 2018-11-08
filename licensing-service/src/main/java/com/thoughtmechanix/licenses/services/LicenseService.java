@@ -1,6 +1,7 @@
 package com.thoughtmechanix.licenses.services;
 
 import com.thoughtmechanix.licenses.clients.OrganizationDiscoveryClient;
+import com.thoughtmechanix.licenses.clients.OrganizationFeignClient;
 import com.thoughtmechanix.licenses.clients.OrganizationRestTemplateClient;
 import com.thoughtmechanix.licenses.config.ServerConfig;
 import com.thoughtmechanix.licenses.model.License;
@@ -22,6 +23,9 @@ public class LicenseService {
 
     @Autowired
     private OrganizationRestTemplateClient organizationRestClient;
+
+    @Autowired
+    private OrganizationFeignClient organizationFeignClient;
 
     @Autowired
     ServerConfig serverConfig;
@@ -46,10 +50,10 @@ public class LicenseService {
         Organization organization = null;
 
         switch (clientType) {
-//            case "feign":
-//                System.out.println("I am using the feign client");
-//                organization = organizationFeignClient.getOrganization(organizationId);
-//                break;
+            case "feign":
+                System.out.println("I am using the feign client");
+                organization = organizationFeignClient.getOrganization(organizationId);
+                break;
             case "rest":
                 System.out.println("I am using the rest client");
                 organization = organizationRestClient.getOrganization(organizationId);
